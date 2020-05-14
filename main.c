@@ -190,7 +190,7 @@ int main() {
 							puts("Which zone with a creature to you want to attack?");
 							scanf("%d", &atk);
 						} while (atk < 1 || atk > 5 || (game.p1_creatures[atk-1].power == 0 && game.p1_creatures[atk-1].strength == 0));
-						if (game.p1_creatures[i].power >= game.p2_creatures[atk-1].strength && game.p1_creatures[i].strength <= game.p2_creatures[atk-1].power) {
+						if (game.p1_creatures[atk-1].power >= game.p2_creatures[i].strength && game.p1_creatures[atk-1].strength <= game.p2_creatures[i].power) {
 							game.p1_creatures[i].power = 0;
 							game.p1_creatures[i].strength = 0;
 							game.p1_creatures[i].asleep = true;
@@ -198,12 +198,12 @@ int main() {
 							game.p2_creatures[atk-1].strength = 0;
 							game.p2_creatures[atk-1].asleep = true;
 						}
-						else if (game.p1_creatures[i].power < game.p2_creatures[atk-1].strength && game.p1_creatures[i].strength <= game.p2_creatures[atk-1].power) {
+						else if (game.p1_creatures[i].power < game.p2_creatures[atk-1].strength && game.p1_creatures[atk-1].strength <= game.p2_creatures[i].power) {
 							game.p1_creatures[i].power = 0;
 							game.p1_creatures[i].strength = 0;
 							game.p1_creatures[i].asleep = true;
 						}
-						else if (game.p1_creatures[i].power >= game.p2_creatures[atk-1].strength && game.p1_creatures[i].strength > game.p2_creatures[atk-1].power) {
+						else if (game.p1_creatures[i].power >= game.p2_creatures[atk-1].strength && game.p1_creatures[atk-1].strength > game.p2_creatures[i].power) {
 							game.p2_creatures[atk-1].power = 0;
 							game.p2_creatures[atk-1].strength = 0;
 							game.p2_creatures[atk-1].asleep = true;
