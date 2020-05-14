@@ -1,2 +1,2 @@
-# soulstone
+# Soulstone
 The Best Designed Game
